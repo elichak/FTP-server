@@ -51,7 +51,7 @@ def process(req):
 
     elif req[:3] == 'ren':
         filename = '/'.join([dirname, re.search(r"<([A-Za-z0-9_]+\.+[t]+[x]+[t]+)>", req).group(1)])
-        new_file_name = '/'.join([dirname, re.search(r"\[([A-Za-z0-9_]+)\]", req).group(1)])
+        new_file_name = '/'.join([dirname, re.search(r"\[([A-Za-z0-9_] + \.+[t]+[x]+[t]+)\]", req).group(1)])
         print(filename)
         if os.path.exists(filename):
             os.rename(filename, new_file_name)
